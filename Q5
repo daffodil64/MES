@@ -1,0 +1,28 @@
+        MOV R0, #40H      ; Read pointer
+        MOV R1, #40H      ; Write pointer
+
+SCAN:
+        MOV A, @R0
+        CJNE A, #0FFH, STORE
+        SJMP NEXT
+
+STORE:
+        MOV @R1, A
+        INC R1
+
+NEXT:
+        INC R0
+        CJNE R0, #60H, SCAN
+
+FILL:
+        MOV A, R1
+        CJNE A, #60H, CLEAR
+        SJMP DONE
+
+CLEAR:
+        MOV @R1, #00H
+        INC R1
+        SJMP FILL
+
+DONE:
+        NOP
