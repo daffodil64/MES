@@ -1,0 +1,10 @@
+; Direct addressing
+        MOV A, 50H
+        ; Here, A = 40H
+        MOV R0, A        
+
+
+; Indirect addressing 
+        MOV R1, #50H     
+        MOV A, @R1       
+        MOV R2, A  
