@@ -1,0 +1,4 @@
+MOV B, #12H
+MOV A, #01H
+ADD A, #00H
+INC A
