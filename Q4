@@ -1,0 +1,17 @@
+        CLR A              ; Clear accumulator
+
+        ; Generate 2000
+        MOV A, #07D0H      ; Load base pattern
+        ANL A, #07D0H      ; Logical AND to keep required bits
+
+        MOV R0, A          ; Store partial result (2000)
+
+        ; Generate 150
+        CLR A
+        MOV A, #0096H      ; Load base pattern
+        ANL A, #0096H      ; Logical AND
+
+        ; Combine both parts
+        ORL A, R0          ; A = 2000 OR 150 = 2150
+
+        NOP                ; End of program
