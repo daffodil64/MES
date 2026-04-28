@@ -1,0 +1,6 @@
+ORG 000H
+SETB P3.3 ; A0 = 1
+SETB P3.4 ; A1 = 1
+
+MOV A, #0F8H ;->7  1(#06H), 2(5BH), 3(4FH), 4(66H), 5(6DH), 8(7DH), 9(6FH)
+MOV P1, A
