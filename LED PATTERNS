@@ -1,1 +1,28 @@
 
+ORG ØØØØH
+
+START:
+
+MOV A,#Ø1H
+
+LOOP:
+
+MOV P1,A
+
+ACALL DELAY
+
+RL A
+
+SJMP LOOP
+
+DELAY:
+
+MOV R6,#255
+
+H1: MOV R7,#255
+
+H2: DJHZ R7,H2
+
+DJNZ R6, H1
+
+RET
